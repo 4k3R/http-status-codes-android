@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorprimary">#F44236</color>
+    <color name="colorprimarydark">#D32F2F</color>
+    <color name="fabbutton">#FFD600</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="primary_dark_1xx">#C2185B</color>
+    <color name="primary_1xx">#E91E63</color>
+    <color name="primary_dark_2xx">#1976D2</color>
+    <color name="primary_2xx">#2196F3</color>
+    <color name="primary_dark_3xx">#388E3C</color>
+    <color name="primary_3xx">#4CAF50</color>
+    <color name="primary_dark_4xx">#303F9F</color>
+    <color name="primary_4xx">#3F51B5</color>
+    <color name="primary_dark_5xx">#455A64</color>
+    <color name="primary_5xx">#607D8B</color>
+
+</resources>
