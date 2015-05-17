@@ -32,23 +32,6 @@ public class MainAdapter extends ArrayAdapter<HttpStatusCodes> {
         codeText.setText(httpStatusCode.getCode());
         summaryText.setText(httpStatusCode.getSummary());
 
-        int code = Integer.parseInt(httpStatusCode.getCode());
-        if (code >= 100 && code < 200) {
-            codeText.setTextColor(getContext().getResources().getColor(R.color.primary_dark_1xx));
-        } else
-        if (code >= 200 && code < 300) {
-            codeText.setTextColor(getContext().getResources().getColor(R.color.primary_dark_2xx));
-        } else
-        if (code >= 300 && code < 400) {
-            codeText.setTextColor(getContext().getResources().getColor(R.color.primary_dark_3xx));
-        } else
-        if (code >= 400 && code < 500) {
-            codeText.setTextColor(getContext().getResources().getColor(R.color.primary_dark_4xx));
-        } else
-        if (code >= 500) {
-            codeText.setTextColor(getContext().getResources().getColor(R.color.primary_dark_5xx));
-        }
-
         return convertView;
     }
 }
