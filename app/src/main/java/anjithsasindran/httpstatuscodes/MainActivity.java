@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.SearchView;
 import android.text.InputType;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +15,8 @@ import java.sql.SQLException;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    MainAdapter mainAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,7 @@ public class MainActivity extends ActionBarActivity {
         CodesAndSummary obj = new CodesAndSummary(this);
         obj.setValues();
 
-        MainAdapter mainAdapter = new MainAdapter(this, obj.httpStatusCodes);
+        mainAdapter = new MainAdapter(this, obj.httpStatusCodes);
 
         ListView listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(mainAdapter);
@@ -72,13 +73,13 @@ public class MainActivity extends ActionBarActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {
-                Log.d("text submit", s);
-                return true;
+                return false;
             }
 
             @Override
             public boolean onQueryTextChange(String s) {
-                Log.d("text change", s);
+
+                mainAdapter.getFilter().filter(s);
                 return true;
             }
         });
