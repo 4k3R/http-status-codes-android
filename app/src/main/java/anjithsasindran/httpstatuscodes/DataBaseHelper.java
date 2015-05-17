@@ -116,7 +116,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     //Retrieving all the data from database.
     public Cursor getAllHttpCode(String code) {
 
-        return getReadableDatabase().rawQuery("select * from statuses where key = ?", new String[] {code});
+        return getReadableDatabase().rawQuery("select * from statuses where code = ?", new String[] {code});
     }
 
     public Cursor getCodesAndSummary() {

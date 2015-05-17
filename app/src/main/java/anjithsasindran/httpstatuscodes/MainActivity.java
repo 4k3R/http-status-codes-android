@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.sql.SQLException;
 
@@ -54,8 +55,9 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                TextView codeView = (TextView) view.findViewById(R.id.listviewcode);
                 Intent detailsIntent = new Intent(getBaseContext(), DetailsActivity.class);
-                detailsIntent.putExtra("position", position+1+"");
+                detailsIntent.putExtra("code", codeView.getText());
                 startActivity(detailsIntent);
             }
         });

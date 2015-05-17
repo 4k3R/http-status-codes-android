@@ -9,16 +9,6 @@
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#727272</color>
     <color name="divider_color">#B6B6B6</color>
-
-    <color name="primary_dark_1xx">#C2185B</color>
-    <color name="primary_1xx">#E91E63</color>
-    <color name="primary_dark_2xx">#1976D2</color>
-    <color name="primary_2xx">#2196F3</color>
-    <color name="primary_dark_3xx">#388E3C</color>
-    <color name="primary_3xx">#4CAF50</color>
-    <color name="primary_dark_4xx">#303F9F</color>
-    <color name="primary_4xx">#3F51B5</color>
-    <color name="primary_dark_5xx">#455A64</color>
-    <color name="primary_5xx">#607D8B</color>
+    <color name="accent_color_dark">#FF8F00</color>
 
 </resources>

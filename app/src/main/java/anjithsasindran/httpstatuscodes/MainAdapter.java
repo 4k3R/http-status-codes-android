@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * Created by Anjith Sasindran on 16-May-15.
- * Custom adapter for inflating ListView of MainActivity
+ * Custom adapter for inflating ListView of MainActivity and SearchView filtering
  */
 public class MainAdapter extends ArrayAdapter<HttpStatusCodes> {
 
@@ -99,12 +99,8 @@ public class MainAdapter extends ArrayAdapter<HttpStatusCodes> {
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
 
-                if (results.count == 0) {
-                    notifyDataSetInvalidated();
-                } else {
-                    statusCodesForAdapter = (HttpStatusCodes[]) results.values;
-                    notifyDataSetChanged();
-                }
+                statusCodesForAdapter = (HttpStatusCodes[]) results.values;
+                notifyDataSetChanged();
             }
         };
     }

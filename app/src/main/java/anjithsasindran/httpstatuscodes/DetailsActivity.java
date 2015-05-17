@@ -16,7 +16,7 @@ public class DetailsActivity extends ActionBarActivity {
         setContentView(R.layout.details_layout);
 
         DataBaseHelper dbHelper = new DataBaseHelper(this);
-        Cursor cursor = dbHelper.getAllHttpCode(getIntent().getStringExtra("position"));
+        Cursor cursor = dbHelper.getAllHttpCode(getIntent().getStringExtra("code"));
 
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         cursor.moveToFirst();
