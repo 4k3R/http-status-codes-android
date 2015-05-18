@@ -6,9 +6,14 @@
 
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
+
+        <!-- colorAccent sets color of SearchView and cursor -->
         <item name="colorAccent">@color/accent_color</item>
 
-        <item name="android:colorControlNormal">@color/accent_color_dark</item>
+        <!-- colorControlNormal sets scrollbar color -->
+        <item name="android:colorControlNormal">@color/accent_color</item>
+
+        <!-- colorControlHighlight sets ListView selection & reveal color -->
         <item name="android:colorControlHighlight">@color/accent_color</item>
 
     </style>
