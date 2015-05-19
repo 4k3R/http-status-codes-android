@@ -10,5 +10,7 @@
     <color name="secondary_text">#727272</color>
     <color name="divider_color">#B6B6B6</color>
     <color name="accent_color_dark">#FF8F00</color>
+    <color name="wikipedia_color">#848484</color>
+    <color name="ietf_color">#FFD652</color>
 
 </resources>

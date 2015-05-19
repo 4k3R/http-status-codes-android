@@ -5,7 +5,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:scrollbars="vertical" >
+    android:scrollbars="none" >
 
     <LinearLayout
         android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
                     android:textSize="@dimen/abc_text_size_large_material"
                     android:textColor="@color/white"
                     android:padding="@dimen/activity_horizontal_margin"
-                    android:background="@color/accent_color_dark"/>
+                    android:background="@color/wikipedia_color"/>
 
                 <TextView
                     android:id="@+id/wikicard_body"
@@ -60,6 +60,7 @@
                         android:layout_margin="@dimen/activity_horizontal_margin"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentEnd="true"
+                        android:onClick="linkWiki"
                         android:text="@string/link" />
 
                     <Button
@@ -71,6 +72,7 @@
                         android:layout_marginStart="@dimen/activity_horizontal_margin"
                         android:layout_toStartOf="@id/wiki_link"
                         android:layout_toLeftOf="@id/wiki_link"
+                        android:onClick="shareWiki"
                         android:text="@string/share" />
 
                 </RelativeLayout>
@@ -99,9 +101,9 @@
                     android:text="@string/ietf"
                     android:fontFamily="sans-serif-condensed"
                     android:textSize="@dimen/abc_text_size_large_material"
-                    android:textColor="@color/white"
+                    android:textColor="@color/primary_text"
                     android:padding="@dimen/activity_horizontal_margin"
-                    android:background="@color/accent_color_dark"/>
+                    android:background="@color/ietf_color"/>
 
                 <TextView
                     android:id="@+id/ietfcard_body"
@@ -126,6 +128,7 @@
                         android:layout_margin="@dimen/activity_horizontal_margin"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentEnd="true"
+                        android:onClick="linkIetf"
                         android:text="@string/link" />
 
                     <Button
@@ -137,6 +140,7 @@
                         android:layout_marginStart="@dimen/activity_horizontal_margin"
                         android:layout_toLeftOf="@id/ietf_link"
                         android:layout_toStartOf="@id/ietf_link"
+                        android:onClick="shareIetf"
                         android:text="@string/share" />
 
                 </RelativeLayout>

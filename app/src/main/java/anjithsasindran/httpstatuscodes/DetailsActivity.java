@@ -1,10 +1,13 @@
 package anjithsasindran.httpstatuscodes;
 
+import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.view.View;
 import android.widget.TextView;
 
 /**
@@ -13,13 +16,15 @@ import android.widget.TextView;
  */
 public class DetailsActivity extends AppCompatActivity {
 
+    Cursor cursor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.details_layout);
 
         DataBaseHelper dbHelper = new DataBaseHelper(this);
-        Cursor cursor = dbHelper.getAllHttpCode(getIntent().getStringExtra("code"));
+        cursor = dbHelper.getAllHttpCode(getIntent().getStringExtra("code"));
         cursor.moveToFirst();
 
         ActionBar actionBar = getSupportActionBar();
@@ -40,5 +45,41 @@ public class DetailsActivity extends AppCompatActivity {
             ietfCardBody.setText(cursor.getString(6));
         }
 
+    }
+
+    public void shareWiki(View view) {
+
+        Intent shareWikiIntent = new Intent(Intent.ACTION_SEND);
+        shareWikiIntent.putExtra(Intent.EXTRA_TEXT, cursor.getString(4));
+        shareWikiIntent.putExtra(Intent.EXTRA_SUBJECT, getResources()
+                .getString(R.string.http_status_code) + " " + cursor.getString(1) +" details");
+        shareWikiIntent.setType("text/plain");
+        startActivity(shareWikiIntent);
+    }
+
+    public void shareIetf(View view) {
+
+        Intent shareIetfIntent = new Intent(Intent.ACTION_SEND);
+        shareIetfIntent.putExtra(Intent.EXTRA_TEXT, cursor.getString(6));
+        shareIetfIntent.putExtra(Intent.EXTRA_SUBJECT, getResources()
+        .getString(R.string.http_status_code) + " " + cursor.getString(1) + " details");
+        shareIetfIntent.setType("text/plain");
+        startActivity(shareIetfIntent);
+    }
+
+    public void linkWiki(View view) {
+
+        String url = cursor.getString(5);
+        Intent wikiLinkIntent = new Intent(Intent.ACTION_VIEW);
+        wikiLinkIntent.setData(Uri.parse(url));
+        startActivity(wikiLinkIntent);
+    }
+
+    public void linkIetf(View view) {
+
+        String url = cursor.getString(7);
+        Intent ietfLinkIntent = new Intent(Intent.ACTION_VIEW);
+        ietfLinkIntent.setData(Uri.parse(url));
+        startActivity(ietfLinkIntent);
     }
 }
