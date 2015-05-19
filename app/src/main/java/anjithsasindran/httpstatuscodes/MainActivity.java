@@ -2,7 +2,7 @@ package anjithsasindran.httpstatuscodes;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.text.InputType;
 import android.view.Menu;
@@ -15,7 +15,7 @@ import android.widget.TextView;
 import java.sql.SQLException;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     MainAdapter mainAdapter;
 
@@ -71,6 +71,7 @@ public class MainActivity extends ActionBarActivity {
 
         getMenuInflater().inflate(R.menu.menu_main, menu);
         SearchView searchView = (SearchView)menu.findItem(R.id.action_search).getActionView();
+        searchView.setQueryHint(getResources().getString(R.string.searchview_hint));
         searchView.setInputType(InputType.TYPE_CLASS_NUMBER);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
