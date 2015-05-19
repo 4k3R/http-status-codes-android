@@ -57,10 +57,12 @@
                         android:id="@+id/wiki_link"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentEnd="true"
                         android:onClick="linkWiki"
+                        style="@style/CustomButton"
                         android:text="@string/link" />
 
                     <Button
@@ -73,6 +75,7 @@
                         android:layout_toStartOf="@id/wiki_link"
                         android:layout_toLeftOf="@id/wiki_link"
                         android:onClick="shareWiki"
+                        style="@style/CustomButton"
                         android:text="@string/share" />
 
                 </RelativeLayout>
@@ -101,7 +104,7 @@
                     android:text="@string/ietf"
                     android:fontFamily="sans-serif-condensed"
                     android:textSize="@dimen/abc_text_size_large_material"
-                    android:textColor="@color/primary_text"
+                    android:textColor="@color/white"
                     android:padding="@dimen/activity_horizontal_margin"
                     android:background="@color/ietf_color"/>
 
@@ -125,10 +128,12 @@
                         android:id="@+id/ietf_link"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentEnd="true"
                         android:onClick="linkIetf"
+                        style="@style/CustomButton"
                         android:text="@string/link" />
 
                     <Button
@@ -141,6 +146,7 @@
                         android:layout_toLeftOf="@id/ietf_link"
                         android:layout_toStartOf="@id/ietf_link"
                         android:onClick="shareIetf"
+                        style="@style/CustomButton"
                         android:text="@string/share" />
 
                 </RelativeLayout>

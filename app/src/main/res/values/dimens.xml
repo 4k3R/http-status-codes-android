@@ -3,6 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <dimen name="custom_button_spacing">8dp</dimen>
     <dimen name="custom_horizontal_margin">6dp</dimen>
     <dimen name="line_spacing_extra_custom">8dp</dimen>
     <dimen name="custom_card_elevation">2dp</dimen>
