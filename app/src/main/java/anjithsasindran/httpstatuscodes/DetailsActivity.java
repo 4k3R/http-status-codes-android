@@ -74,12 +74,4 @@ public class DetailsActivity extends AppCompatActivity {
         wikiLinkIntent.setData(Uri.parse(url));
         startActivity(wikiLinkIntent);
     }
-
-    public void linkIetf(View view) {
-
-        String url = cursor.getString(7);
-        Intent ietfLinkIntent = new Intent(Intent.ACTION_VIEW);
-        ietfLinkIntent.setData(Uri.parse(url));
-        startActivity(ietfLinkIntent);
-    }
 }
