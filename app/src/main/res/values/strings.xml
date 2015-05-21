@@ -12,9 +12,8 @@
     and references. Fork and create pull request to add new HTTP codes, translate to another language
     or to make improvements.</string>
     <string name="anjith_name">Anjith Sasindran</string>
-    <string name="anjith_desc">Hi, I\'m Anjith Sasindran and I\'m an Android/Java Developer based in
-    India. I\'m an open source enthusiast. Source codes are made available at
-    GitHub.</string>
+    <string name="anjith_desc">I\'m an Android/Java Developer based in
+    India. I open source my works at Github.</string>
 
     <string name="searchview_hint">Search codes</string>
     <string name="wikipedia">Wikipedia</string>

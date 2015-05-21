@@ -7,7 +7,8 @@
 
     <LinearLayout
         android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
+        android:weightSum="2"
         android:paddingLeft="@dimen/custom_horizontal_margin"
         android:paddingRight="@dimen/custom_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
@@ -17,6 +18,7 @@
             android:id="@+id/project_card"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_weight="1"
             card_view:cardUseCompatPadding="true"
             card_view:cardElevation="@dimen/custom_card_elevation" >
 
@@ -33,7 +35,7 @@
                     android:paddingLeft="@dimen/activity_horizontal_margin"
                     android:paddingRight="@dimen/activity_horizontal_margin"
                     android:paddingTop="@dimen/settings_card_padding"
-                    android:text="@string/app_name_version"
+                    android:text="@string/app_name"
                     android:textSize="@dimen/abc_text_size_large_material"
                     android:textColor="@color/white" />
 
@@ -75,7 +77,9 @@
             android:id="@+id/anjith_card"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/custom_horizontal_margin"
+            android:layout_marginStart="@dimen/custom_horizontal_margin"
             card_view:cardUseCompatPadding="true"
             card_view:cardElevation="@dimen/custom_card_elevation" >
 
@@ -115,7 +119,7 @@
                     android:paddingTop="@dimen/custom_vertical_margin"
                     android:paddingBottom="@dimen/custom_vertical_margin"
                     android:background="@color/color_primary_dark"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <Button
                         android:layout_width="wrap_content"
