@@ -2,6 +2,7 @@ package anjithsasindran.httpstatuscodes;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -33,16 +34,27 @@ public class DetailsActivity extends AppCompatActivity {
         actionBar.setSubtitle(cursor.getString(2));
 
         CardView wikiCardView = (CardView) findViewById(R.id.wiki_card_view);
+
+        ((TextView) wikiCardView.findViewById(R.id.wikicard_header))
+                .setTypeface(Typeface.create("sans-serif-condensed", Typeface.NORMAL));
+
         TextView wikiCardBody = (TextView) wikiCardView.findViewById(R.id.wikicard_body);
         wikiCardBody.setText(cursor.getString(4));
+        wikiCardBody.setTypeface(Typeface.create("sans-serif-light", Typeface.NORMAL));
 
         CardView ietfCardView = (CardView) findViewById(R.id.ietf_card_view);
+
+        ((TextView) ietfCardView.findViewById(R.id.ietfcard_header))
+                .setTypeface(Typeface.create("sans-serif-condensed", Typeface.NORMAL));
+
+
         TextView ietfCardBody = (TextView) ietfCardView.findViewById(R.id.ietfcard_body);
 
         if (cursor.getString(6) == null) {
             ietfCardView.setVisibility(CardView.GONE);
         } else {
             ietfCardBody.setText(cursor.getString(6));
+            ietfCardBody.setTypeface(Typeface.create("sans-serif-light", Typeface.NORMAL));
         }
 
     }

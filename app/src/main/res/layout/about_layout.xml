@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:scrollbars="none" android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/custom_horizontal_margin"
+        android:paddingRight="@dimen/custom_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/project_card"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardElevation="@dimen/custom_card_elevation" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/color_primary_light" >
+
+                <TextView
+                    android:id="@+id/project_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/settings_card_padding"
+                    android:text="@string/app_name_version"
+                    android:textSize="@dimen/abc_text_size_large_material"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/project_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/custom_vertical_margin"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingBottom="@dimen/settings_card_padding"
+                    android:text="@string/project_desc"
+                    android:lineSpacingExtra="@dimen/line_spacing_extra_custom"
+                    android:textSize="@dimen/abc_text_size_medium_material"
+                    android:textColor="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/custom_vertical_margin"
+                    android:paddingBottom="@dimen/custom_vertical_margin"
+                    android:background="@color/color_primary_dark"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/github"
+                        style="@style/CustomSettingButton" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/share"
+                        style="@style/CustomSettingButton" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/anjith_card"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardElevation="@dimen/custom_card_elevation" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/color_primary_light" >
+
+                <TextView
+                    android:id="@+id/anjith_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/settings_card_padding"
+                    android:text="@string/anjith_name"
+                    android:textSize="@dimen/abc_text_size_large_material"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/anjith_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/custom_vertical_margin"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingBottom="@dimen/settings_card_padding"
+                    android:text="@string/anjith_desc"
+                    android:lineSpacingExtra="@dimen/line_spacing_extra_custom"
+                    android:textSize="@dimen/abc_text_size_medium_material"
+                    android:textColor="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/custom_vertical_margin"
+                    android:paddingBottom="@dimen/custom_vertical_margin"
+                    android:background="@color/color_primary_dark"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/github"
+                        style="@style/CustomSettingButton" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/personal_website"
+                        style="@style/CustomSettingButton" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/instagram"
+                        style="@style/CustomSettingButton" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>

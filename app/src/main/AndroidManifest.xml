@@ -25,8 +25,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="anjithsasindran.httpstatuscodes.SettingsActivity"
-            android:label="@string/action_settings"
+        <activity android:name="anjithsasindran.httpstatuscodes.AboutActivity"
+            android:label="@string/about"
             android:parentActivityName="anjithsasindran.httpstatuscodes.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

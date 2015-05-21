@@ -28,10 +28,10 @@
                 android:orientation="vertical" >
 
                 <TextView
+                    android:id="@+id/wikicard_header"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/wikipedia"
-                    android:fontFamily="sans-serif-condensed"
                     android:textSize="@dimen/abc_text_size_large_material"
                     android:textColor="@color/white"
                     android:padding="@dimen/activity_horizontal_margin"
@@ -41,11 +41,10 @@
                     android:id="@+id/wikicard_body"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:gravity="start"
                     android:paddingLeft="@dimen/activity_horizontal_margin"
                     android:paddingRight="@dimen/activity_horizontal_margin"
                     android:paddingTop="@dimen/activity_vertical_margin"
-                    android:fontFamily="sans-serif-light"
                     android:textSize="@dimen/abc_text_size_subhead_material"
                     android:lineSpacingExtra="@dimen/line_spacing_extra_custom"/>
 
@@ -99,10 +98,10 @@
                 android:orientation="vertical" >
 
                 <TextView
+                    android:id="@+id/ietfcard_header"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/ietf"
-                    android:fontFamily="sans-serif-condensed"
                     android:textSize="@dimen/abc_text_size_large_material"
                     android:textColor="@color/white"
                     android:padding="@dimen/activity_horizontal_margin"
@@ -112,11 +111,10 @@
                     android:id="@+id/ietfcard_body"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:gravity="start"
                     android:paddingLeft="@dimen/activity_horizontal_margin"
                     android:paddingRight="@dimen/activity_horizontal_margin"
                     android:paddingTop="@dimen/activity_vertical_margin"
-                    android:fontFamily="sans-serif-light"
                     android:textSize="@dimen/abc_text_size_subhead_material"
                     android:lineSpacingExtra="@dimen/line_spacing_extra_custom"/>
 

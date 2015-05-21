@@ -2,15 +2,28 @@
 <resources>
 
     <string name="app_name">HTTP Status Codes</string>
+    <string name="app_name_version">HTTP Status Codes v1.0.0</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="search_title">Search</string>
     <string name="http_status_code">HTTP Status Code</string>
+    <string name="project_desc">Open sourced educational app which contains most commonly used
+    HyperText Transfer Protocol(HTTP) status codes with their Wikipedia and IETF descriptions
+    and references. Fork and create pull request to add new HTTP codes, translate to another language
+    or to make improvements.</string>
+    <string name="anjith_name">Anjith Sasindran</string>
+    <string name="anjith_desc">Hi, I\'m Anjith Sasindran and I\'m an Android/Java Developer based in
+    India. I\'m an open source enthusiast. Source codes are made available at
+    GitHub.</string>
 
     <string name="searchview_hint">Search codes</string>
     <string name="wikipedia">Wikipedia</string>
     <string name="ietf">IETF</string>
     <string name="link">LINK</string>
     <string name="share">SHARE</string>
+    <string name="github">GITHUB</string>
+    <string name="personal_website">WEBSITE</string>
+    <string name="instagram">INSTAGRAM</string>
+    <string name="about">About</string>
 
 </resources>
