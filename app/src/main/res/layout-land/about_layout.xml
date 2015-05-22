@@ -65,7 +65,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/github"
                         android:onClick="openProjectGithub"
-                        style="@style/CustomSettingButton" />
+                        style="@style/CustomAboutButton" />
 
                 </LinearLayout>
 
@@ -126,21 +126,21 @@
                         android:layout_height="wrap_content"
                         android:text="@string/github"
                         android:onClick="openAnjithGithub"
-                        style="@style/CustomSettingButton" />
+                        style="@style/CustomAboutButton" />
 
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/personal_website"
                         android:onClick="openAnjithWebsite"
-                        style="@style/CustomSettingButton" />
+                        style="@style/CustomAboutButton" />
 
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/instagram"
                         android:onClick="openAnjithInstagram"
-                        style="@style/CustomSettingButton" />
+                        style="@style/CustomAboutButton" />
                 </LinearLayout>
 
             </LinearLayout>

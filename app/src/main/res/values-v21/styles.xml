@@ -24,7 +24,7 @@
         <item name="android:textColor">@color/color_primary</item>
     </style>
 
-    <style name="CustomSettingButton" parent="android:Widget.Material.Button.Borderless">
+    <style name="CustomAboutButton" parent="android:Widget.Material.Button.Borderless">
         <!-- Customize button here -->
 
         <item name="android:textColor">@color/white</item>

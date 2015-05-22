@@ -9,4 +9,7 @@
     <dimen name="custom_vertical_margin">6dp</dimen>
     <dimen name="line_spacing_extra_custom">8dp</dimen>
     <dimen name="custom_card_elevation">2dp</dimen>
+
+    <!-- Pre API 21 devices -->
+    <dimen name="button_margin">2dp</dimen>
 </resources>
