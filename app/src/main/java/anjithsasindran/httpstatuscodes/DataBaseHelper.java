@@ -4,7 +4,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -44,7 +43,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             /*
             Do nothing, database already exists
              */
-            Log.d("DB STAT", "Database already exists");
         } else {
             /*
              * By calling this method, an empty database will be inserted into the default system path
@@ -101,7 +99,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         //Open the database
         String myPath = DB_PATH + DB_NAME;
-        myDatabase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+        myDatabase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY|SQLiteDatabase.NO_LOCALIZED_COLLATORS);
     }
 
     @Override

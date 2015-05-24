@@ -6,8 +6,11 @@ import android.content.pm.ResolveInfo;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -23,6 +26,10 @@ public class AboutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about_layout);
+
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         //Setting font since android:fontFamily in xml is not availabe in API 14
         CardView project_card = (CardView)findViewById(R.id.project_card);
@@ -61,6 +68,16 @@ public class AboutActivity extends AppCompatActivity {
                 .setData(Uri.parse("http://anjithsasindran.in")));
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+           }
+        return super.onOptionsItemSelected(item);
+    }
+
     public void openAnjithInstagram(View view) {
 
         Uri uri = Uri.parse("http://instagram.com/_u/anjithsasindran");
@@ -76,5 +93,7 @@ public class AboutActivity extends AppCompatActivity {
         else {
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://instagram.com/anjithsasindran")));
         }
+
+
     }
 }

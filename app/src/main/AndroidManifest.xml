@@ -19,6 +19,9 @@
 
         <activity android:name="anjithsasindran.httpstatuscodes.DetailsActivity"
             android:parentActivityName="anjithsasindran.httpstatuscodes.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -28,6 +31,9 @@
         <activity android:name="anjithsasindran.httpstatuscodes.AboutActivity"
             android:label="@string/about"
             android:parentActivityName="anjithsasindran.httpstatuscodes.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />

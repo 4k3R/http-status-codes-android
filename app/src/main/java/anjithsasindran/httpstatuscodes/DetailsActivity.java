@@ -5,9 +5,11 @@ import android.database.Cursor;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -27,9 +29,11 @@ public class DetailsActivity extends AppCompatActivity {
         DataBaseHelper dbHelper = new DataBaseHelper(this);
         cursor = dbHelper.getAllHttpCode(getIntent().getStringExtra("code"));
         cursor.moveToFirst();
+        dbHelper.close();
 
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(cursor.getString(1));
         actionBar.setSubtitle(cursor.getString(2));
 
@@ -85,5 +89,15 @@ public class DetailsActivity extends AppCompatActivity {
         Intent wikiLinkIntent = new Intent(Intent.ACTION_VIEW);
         wikiLinkIntent.setData(Uri.parse(url));
         startActivity(wikiLinkIntent);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.home :
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

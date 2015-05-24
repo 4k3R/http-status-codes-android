@@ -7,11 +7,12 @@
     <color name="light_primary_color">#FFCDD2</color>
     <color name="white">#FFFFFF</color>
     <color name="accent_color">#FFC107</color>
-    <color name="color_button_activated_details">#FFCA28</color>
+    <color name="accent_color_dark">#FF8F00</color>
+    <color name="accent_color_light">#FFCA28</color>
+    <color name="accent_color_custom">#FACC40</color>
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#727272</color>
     <color name="divider_color">#B6B6B6</color>
-    <color name="accent_color_dark">#FF8F00</color>
     <color name="wikipedia_color">#848484</color>
     <color name="ietf_color">#FFC107</color>
 
