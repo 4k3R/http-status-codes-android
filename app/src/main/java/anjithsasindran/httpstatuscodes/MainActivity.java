@@ -12,11 +12,18 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.mixpanel.android.mpmetrics.MixpanelAPI;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.sql.SQLException;
 
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String mixpanelToken = "e88d81a49f2d1e714f037a31349cae08";
+    MixpanelAPI mixpanel;
     MainAdapter mainAdapter;
 
     @Override
@@ -37,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             sqle.printStackTrace();
         }
         dbHelper.close();
+        mixpanel = MixpanelAPI.getInstance(this, mixpanelToken);
 
         /*
          * CodesAndSummary class retrieves codes and summary from database and uses the setters of
@@ -58,6 +66,16 @@ public class MainActivity extends AppCompatActivity {
                 TextView codeView = (TextView) view.findViewById(R.id.listviewcode);
                 Intent detailsIntent = new Intent(getBaseContext(), DetailsActivity.class);
                 detailsIntent.putExtra("code", codeView.getText());
+
+                JSONObject valueSelected = new JSONObject();
+
+                try {
+                    valueSelected.put("HTTP Code", codeView.getText());
+                    mixpanel.track("HTTP Code Selected", valueSelected);
+                } catch(JSONException e) {
+                    throw new Error("Unable to add JSON value");
+                }
+
                 startActivity(detailsIntent);
             }
         });
@@ -106,5 +124,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onDestroy() {
+        mixpanel.flush();
+        super.onDestroy();
     }
 }
