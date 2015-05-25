@@ -24,5 +24,6 @@
     <string name="personal_website">WEBSITE</string>
     <string name="instagram">INSTAGRAM</string>
     <string name="about">About</string>
+    <string name="listview_empty_text">No codes.</string>
 
 </resources>

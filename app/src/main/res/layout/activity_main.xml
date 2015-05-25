@@ -1,13 +1,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         style="@style/CustomListView" >
     </ListView>
+
+    <TextView
+        android:id="@android:id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_horizontal"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/secondary_text"
+        android:textSize="@dimen/abc_text_size_large_material"
+        android:text="@string/listview_empty_text" />
 
 </LinearLayout>
 

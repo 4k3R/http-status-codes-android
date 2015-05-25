@@ -2,6 +2,7 @@ package anjithsasindran.httpstatuscodes;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.text.InputType;
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(mainAdapter);
+        listView.setEmptyView(findViewById(android.R.id.empty));
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -88,7 +90,9 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
 
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        SearchView searchView = (SearchView)menu.findItem(R.id.action_search).getActionView();
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
         searchView.setQueryHint(getResources().getString(R.string.searchview_hint));
         searchView.setInputType(InputType.TYPE_CLASS_NUMBER);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
