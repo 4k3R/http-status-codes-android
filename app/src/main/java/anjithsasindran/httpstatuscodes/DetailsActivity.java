@@ -1,9 +1,11 @@
 package anjithsasindran.httpstatuscodes;
 
+import android.animation.Animator;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Typeface;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
@@ -11,6 +13,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewAnimationUtils;
+import android.view.animation.AlphaAnimation;
 import android.widget.TextView;
 
 /**
@@ -37,28 +41,71 @@ public class DetailsActivity extends AppCompatActivity {
         actionBar.setTitle(cursor.getString(1));
         actionBar.setSubtitle(cursor.getString(2));
 
+        AlphaAnimation fadeIn = new AlphaAnimation(0.0f, 1.0f);
+        fadeIn.setFillAfter(true);
+        fadeIn.setDuration(1000);
+
+        //Wikipedia CardView
         CardView wikiCardView = (CardView) findViewById(R.id.wiki_card_view);
 
-        ((TextView) wikiCardView.findViewById(R.id.wikicard_header))
-                .setTypeface(Typeface.create("sans-serif-condensed", Typeface.NORMAL));
+        final TextView wikiCardHeader = ((TextView) wikiCardView.findViewById(R.id.wikicard_header));
+        wikiCardHeader.setTypeface(Typeface.create("sans-serif-condensed", Typeface.NORMAL));
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+            wikiCardHeader.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+
+                @Override
+                public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                    int cx = (left + right) / 2;
+                    int cy = (top + bottom) / 2;
+                    int finalRadius = Math.max(cx, cy);
+                    Animator anim = ViewAnimationUtils.createCircularReveal(wikiCardHeader, cx, cy, 0, finalRadius);
+                    wikiCardHeader.setVisibility(View.VISIBLE);
+                    anim.start();
+                }
+            });
+        } else {
+            wikiCardHeader.setVisibility(View.VISIBLE);
+        }
         TextView wikiCardBody = (TextView) wikiCardView.findViewById(R.id.wikicard_body);
         wikiCardBody.setText(cursor.getString(4));
         wikiCardBody.setTypeface(Typeface.create("sans-serif-light", Typeface.NORMAL));
+        wikiCardBody.setAnimation(fadeIn);
 
+        //IETF CardView
         CardView ietfCardView = (CardView) findViewById(R.id.ietf_card_view);
 
-        ((TextView) ietfCardView.findViewById(R.id.ietfcard_header))
-                .setTypeface(Typeface.create("sans-serif-condensed", Typeface.NORMAL));
-
+        final TextView ietfCardHeader = ((TextView) ietfCardView.findViewById(R.id.ietfcard_header));
+        ietfCardHeader.setTypeface(Typeface.create("sans-serif-condensed", Typeface.NORMAL));
 
         TextView ietfCardBody = (TextView) ietfCardView.findViewById(R.id.ietfcard_body);
 
         if (cursor.getString(6) == null) {
             ietfCardView.setVisibility(CardView.GONE);
         } else {
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+                ietfCardHeader.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+
+                    @Override
+                    public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                        int cx = (left + right) / 2;
+                        int cy = (top + bottom) / 2;
+                        int finalRadius = Math.max(cx, cy);
+                        Animator anim = ViewAnimationUtils.createCircularReveal(ietfCardHeader, cx, cy, 0, finalRadius);
+                        ietfCardHeader.setVisibility(View.VISIBLE);
+                        anim.start();
+                    }
+                });
+            } else {
+                ietfCardHeader.setVisibility(View.VISIBLE);
+            }
+
             ietfCardBody.setText(cursor.getString(6));
             ietfCardBody.setTypeface(Typeface.create("sans-serif-light", Typeface.NORMAL));
+            ietfCardBody.setAnimation(fadeIn);
         }
 
     }
